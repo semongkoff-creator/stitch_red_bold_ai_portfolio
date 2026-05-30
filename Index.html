@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Farrel | Portfolio AI &amp; Automation Engineer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Space+Grotesk:wght@700&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#930005",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "surface-variant": "#e2e2e2",
+                        "on-secondary-container": "#656464",
+                        "secondary-container": "#e4e2e1",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-tertiary-container": "#fcfcfc",
+                        "inverse-primary": "#ffb4a9",
+                        "secondary": "#5f5e5e",
+                        "primary-fixed": "#ffdad5",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#b61713",
+                        "on-surface-variant": "#5b403c",
+                        "outline-variant": "#e4beb8",
+                        "surface-tint": "#ba1b16",
+                        "on-background": "#1a1c1c",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#da3429",
+                        "tertiary": "#5a5c5c",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-fixed": "#410001",
+                        "surface": "#f9f9f9",
+                        "surface-bright": "#f9f9f9",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-low": "#f4f3f3",
+                        "surface-dim": "#dadada",
+                        "background": "#f9f9f9",
+                        "on-error": "#ffffff",
+                        "outline": "#906f6b",
+                        "tertiary-container": "#737575",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "primary-fixed-dim": "#ffb4a9",
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1a1c1c",
+                        "surface-container": "#eeeeee",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#e4e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "section-gap": "120px",
+                        "gutter": "32px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Space Grotesk"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"],
+                        "quote": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["14px", { "lineHeight": "100%", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["48px", { "lineHeight": "100%", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "quote": ["32px", { "lineHeight": "130%", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "120%", "fontWeight": "700" }],
+                        "headline-md": ["42px", { "lineHeight": "110%", "fontWeight": "700" }],
+                        "display-lg": ["84px", { "lineHeight": "90%", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "160%", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "150%", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chunky-offset {
+            box-shadow: 8px 8px 0px 0px rgba(26, 28, 28, 1);
+        }
+        .text-outline {
+            -webkit-text-stroke: 1.5px #dadada;
+            color: transparent;
+        }
+        .bg-poster {
+            background-color: #ECECEC;
+        }
+        .zine-tilt {
+            transform: rotate(-2deg);
+        }
+        .zine-tilt-right {
+            transform: rotate(2deg);
+        }
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        .card-float {
+            transform: translateY(0);
+            transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+        }
+        .card-float:hover {
+            transform: translateY(-8px);
+        }
+        .frame-shell {
+            box-shadow: 0 14px 0 0 rgba(26, 28, 28, 1);
+        }
+
+        /* ===== NAVBAR (dirapikan) ===== */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transition: background-color 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+            border-bottom: 1px solid transparent;
+            background: rgba(249, 249, 249, 0.88);
+            backdrop-filter: blur(14px);
+        }
+        .site-nav.scrolled {
+            background-color: rgba(249, 249, 249, 0.92);
+            box-shadow: 0 10px 30px rgba(26, 28, 28, 0.12);
+            border-bottom-color: rgba(26, 28, 28, 0.06);
+        }
+        .nav-link {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem 1.1rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            line-height: 1;
+            white-space: nowrap;
+            transition: color 180ms ease, background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+        }
+        .nav-link:hover {
+            color: #b61713;
+        }
+        .nav-link.active {
+            background: linear-gradient(180deg, #e33226 0%, #b91612 100%);
+            color: #ffffff !important;
+            box-shadow: 0 10px 0 0 rgba(26, 28, 28, 1), 0 16px 28px rgba(182, 23, 19, 0.24);
+            transform: translateY(-1px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        .brand-wordmark {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: clamp(1.18rem, 0.9vw + 0.98rem, 1.8rem);
+            font-weight: 900;
+            letter-spacing: -0.14em;
+            line-height: 0.86;
+            position: relative;
+            text-transform: uppercase;
+            font-style: italic;
+            transform: skewX(-8deg);
+            display: inline-block;
+            text-shadow: 0 1px 0 rgba(26, 28, 28, 0.08);
+        }
+        .brand-wordmark::after {
+            content: "";
+            display: block;
+            width: 1.45em;
+            height: 0.16em;
+            margin-top: 0.14em;
+            border-radius: 9999px;
+            background: linear-gradient(90deg, rgba(179, 23, 19, 0.92), rgba(179, 23, 19, 0.18));
+            transform: translateX(0.06em);
+        }
+
+        section {
+            scroll-margin-top: 7rem;
+        }
+        #hero {
+            scroll-margin-top: 0;
+        }
+    </style>
+</head>
+<body class="bg-poster text-on-surface font-body-md overflow-x-hidden scroll-smooth">
+<!-- Top Navigation -->
+<nav class="site-nav z-50">
+<div class="flex justify-between items-center w-full px-gutter h-20 max-w-container-max mx-auto gap-6">
+<!-- Logo -->
+<a class="flex items-center gap-3 shrink-0" href="#hero" aria-label="Farrel home">
+<img alt="Farrel logo" class="w-10 h-10 md:w-11 md:h-11 rounded-2xl shadow-sm ring-2 ring-primary/10" src="image.png"/>
+<span class="brand-wordmark text-primary">FARREL</span>
+</a>
+<!-- Center links (desktop) -->
+<div class="hidden md:flex items-center gap-1 lg:gap-2">
+<a class="nav-link text-secondary font-label-caps text-label-caps" data-nav-link href="#hero">HOME</a>
+<a class="nav-link text-secondary font-label-caps text-label-caps" data-nav-link href="#about">ABOUT</a>
+<a class="nav-link text-secondary font-label-caps text-label-caps" data-nav-link href="#services">LAYANAN</a>
+<a class="nav-link text-secondary font-label-caps text-label-caps" data-nav-link href="#portfolio">PORTOFOLIO</a>
+<a class="nav-link text-secondary font-label-caps text-label-caps" data-nav-link href="#landing-pages">LANDING PAGE</a>
+</div>
+<!-- CTA (desktop) -->
+<a class="hidden md:inline-flex items-center gap-2 bg-primary text-on-primary px-5 py-2.5 rounded-full font-label-caps text-label-caps shrink-0 hover:scale-105 transition-transform shadow-md" href="#contact">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+                CONTACT US
+            </a>
+<!-- Mobile toggle -->
+<button class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border-2 border-on-surface bg-white text-on-surface" id="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav-menu" aria-label="Open navigation menu">
+<span class="material-symbols-outlined" id="mobile-nav-icon">menu</span>
+</button>
+</div>
+<div class="md:hidden hidden px-gutter pb-4" id="mobile-nav-menu">
+<div class="max-w-container-max mx-auto bg-surface/95 backdrop-blur-md border-2 border-on-surface rounded-[28px] p-4 shadow-xl">
+<div class="grid gap-2">
+<a class="nav-link text-secondary font-label-caps text-label-caps inline-flex items-center justify-between" data-nav-link href="#hero"><span>HOME</span><span class="material-symbols-outlined text-[18px]">north_east</span></a>
+<a class="nav-link text-secondary font-label-caps text-label-caps inline-flex items-center justify-between" data-nav-link href="#about"><span>ABOUT</span><span class="material-symbols-outlined text-[18px]">north_east</span></a>
+<a class="nav-link text-secondary font-label-caps text-label-caps inline-flex items-center justify-between" data-nav-link href="#services"><span>LAYANAN</span><span class="material-symbols-outlined text-[18px]">north_east</span></a>
+<a class="nav-link text-secondary font-label-caps text-label-caps inline-flex items-center justify-between" data-nav-link href="#portfolio"><span>PORTOFOLIO</span><span class="material-symbols-outlined text-[18px]">north_east</span></a>
+<a class="nav-link text-secondary font-label-caps text-label-caps inline-flex items-center justify-between" data-nav-link href="#landing-pages"><span>LANDING PAGE</span><span class="material-symbols-outlined text-[18px]">north_east</span></a>
+<a class="mt-1 bg-primary text-on-primary px-5 py-3 rounded-full font-label-caps text-label-caps inline-flex items-center justify-between" data-nav-link href="#contact"><span>CONTACT US</span><span class="material-symbols-outlined text-[18px]">chat</span></a>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen pt-32 pb-16 px-gutter flex flex-col justify-center overflow-hidden" id="hero">
+<div class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-12 select-none z-0">
+<span class="text-[320px] font-display-lg text-outline leading-none opacity-40">01</span>
+</div>
+<!-- Scattered Doodle Decorations -->
+<div class="absolute top-1/4 right-1/4 animate-pulse opacity-30 pointer-events-none">
+<span class="material-symbols-outlined text-headline-md text-on-surface">settings</span>
+</div>
+<div class="absolute bottom-1/4 left-1/3 rotate-12 opacity-20 pointer-events-none">
+<span class="material-symbols-outlined text-display-lg text-on-surface">hub</span>
+</div>
+<div class="absolute top-1/3 left-10 -rotate-12 opacity-25 pointer-events-none">
+<span class="material-symbols-outlined text-headline-md text-on-surface" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div class="max-w-container-max mx-auto w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
+<div>
+<div class="inline-flex items-center gap-2 bg-primary text-on-primary px-4 py-1 rounded-full font-label-caps text-label-caps mb-8 zine-tilt shadow-lg">
+                    AI &amp; AUTOMATION
+                </div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface uppercase mb-0 tracking-tighter leading-[0.85]">
+                    PORTO<br/>
+<span class="relative inline-block">
+                        FOLIO.
+                        <div class="absolute -z-10 bottom-2 left-0 w-full h-1/2 bg-primary/20 rounded-xl"></div>
+</span>
+</h1>
+<div class="mt-12 flex items-center gap-6">
+<a class="group relative flex items-center justify-center w-16 h-16 bg-primary rounded-full hover:scale-110 transition-transform active:scale-95 chunky-offset" href="#contact">
+<span class="material-symbols-outlined text-on-primary text-headline-sm">arrow_forward</span>
+</a>
+<div>
+<p class="font-display-lg text-headline-sm leading-none">Farrel Ananda Kusuma</p>
+<p class="text-secondary font-body-md">AI &amp; Automation Engineer</p>
+</div>
+</div>
+<!-- Big Tilted Quote -->
+<div class="mt-16 zine-tilt relative max-w-sm">
+<span class="absolute -top-10 -left-8 text-[120px] font-display-lg text-secondary/10 leading-none">“</span>
+<p class="font-quote text-quote text-secondary relative z-10">Membangun mesin yang bekerja selayaknya manusia.</p>
+</div>
+</div>
+<div class="relative flex justify-center items-center">
+<div class="absolute w-[400px] h-[400px] border-2 border-primary/20 rounded-full animate-[spin_20s_linear_infinite]"></div>
+<div class="relative">
+<div class="absolute -bottom-8 -right-8 w-full h-full bg-primary rounded-[32px] -z-10"></div>
+<div class="w-[320px] md:w-[450px] aspect-square rounded-[24px] overflow-hidden border-4 border-on-surface shadow-2xl">
+<img alt="Farrel Ananda Kusuma - Professional AI Engineer" class="w-full h-full object-cover" style="object-position: 50% 18%;" src="assets/foto-profil.jpg"/>
+</div>
+<div class="absolute bottom-4 -right-4 bg-on-surface text-surface px-6 py-2 rounded-lg zine-tilt-right chunky-offset shadow-xl">
+<p class="font-label-caps text-[12px] italic">Selected Best AI &amp; Automation Until 2026</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- About Section -->
+<section class="py-section-gap relative overflow-hidden bg-surface-container-low" id="about">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex items-center gap-4 mb-20">
+<h2 class="font-display-lg text-headline-md uppercase">ABOUT</h2>
+<div class="h-1 flex-grow bg-on-surface-variant/20"></div>
+<div class="w-12 h-12 rounded-full border-2 border-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined">south</span>
+</div>
+</div>
+<div class="grid md:grid-cols-12 gap-12 items-start">
+<div class="md:col-span-5 relative">
+<div class="absolute -top-4 -left-4 w-24 h-24 bg-primary rounded-2xl -z-10 opacity-10"></div>
+<div class="relative rounded-3xl overflow-hidden border-4 border-on-surface shadow-xl">
+<img class="w-full aspect-[4/5] object-cover" data-alt="Portrait foto Farrel dengan latar putih, mengenakan jas hitam dan kemeja putih, tampil profesional dan clean." style="object-position: 50% 18%;" src="assets/foto-profil.jpg"/>
+</div>
+</div>
+<div class="md:col-span-7 flex flex-col gap-8">
+<div class="relative bg-primary text-on-primary p-8 rounded-3xl rounded-tl-none zine-tilt-right shadow-xl max-w-lg">
+<h3 class="font-display-lg text-headline-md mb-4 leading-none">HELLO.</h3>
+<p class="font-body-lg text-white">
+                            Saya Farrel Ananda Kusuma, seorang AI &amp; Automation Developer yang terobsesi dengan efisiensi. Dengan n8n dan AI, saya membangun workflow otomatis yang bisa berpikir, bertindak, dan berkomunikasi seperti manusia — tapi dengan kecepatan mesin.
+                        </p>
+</div>
+<div class="grid md:grid-cols-2 gap-8 mt-4">
+<div class="bg-surface p-8 rounded-2xl border-2 border-on-surface/5 shadow-sm">
+<h4 class="font-display-lg text-headline-sm mb-4 border-b-2 border-primary w-fit">Education</h4>
+<p class="font-label-caps text-primary mb-1">SMKN 2 JAKARTA</p>
+<p class="text-secondary">Software Engineering Major</p>
+</div>
+<div class="bg-surface p-8 rounded-2xl border-2 border-on-surface/5 shadow-sm">
+<h4 class="font-display-lg text-headline-sm mb-4 border-b-2 border-primary w-fit">Experience</h4>
+<div class="space-y-4">
+<div>
+<p class="font-label-caps text-primary mb-1">KAITECH.IO</p>
+<p class="text-secondary text-sm">Automation Specialist</p>
+</div>
+<div>
+<p class="font-label-caps text-primary mb-1">BOTKILAT</p>
+<p class="text-secondary text-sm">AI Agent Developer</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4">
+<h4 class="font-display-lg text-headline-sm mb-6">Expertise Stack</h4>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-on-surface text-surface rounded-full font-label-caps text-sm hover:bg-primary transition-colors cursor-default">N8N</span>
+<span class="px-4 py-2 bg-on-surface text-surface rounded-full font-label-caps text-sm hover:bg-primary transition-colors cursor-default">OPENAI</span>
+<span class="px-4 py-2 bg-on-surface text-surface rounded-full font-label-caps text-sm hover:bg-primary transition-colors cursor-default">PYTHON</span>
+<span class="px-4 py-2 bg-on-surface text-surface rounded-full font-label-caps text-sm hover:bg-primary transition-colors cursor-default">JAVASCRIPT</span>
+<span class="px-4 py-2 bg-on-surface text-surface rounded-full font-label-caps text-sm hover:bg-primary transition-colors cursor-default">GOOGLE SHEETS</span>
+<span class="px-4 py-2 bg-on-surface text-surface rounded-full font-label-caps text-sm hover:bg-primary transition-colors cursor-default">WHATSAPP API</span>
+<span class="px-4 py-2 bg-on-surface text-surface rounded-full font-label-caps text-sm hover:bg-primary transition-colors cursor-default">SELENIUM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-section-gap relative overflow-hidden" id="services">
+<div class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-12 select-none z-0">
+<span class="text-[320px] font-display-lg text-outline leading-none opacity-40">02</span>
+</div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="flex items-center gap-4 mb-20">
+<h2 class="font-display-lg text-headline-md uppercase">LAYANAN</h2>
+<div class="h-1 flex-grow bg-on-surface-variant/20"></div>
+<div class="w-12 h-12 rounded-full border-2 border-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+</div>
+<div class="mb-24 zine-tilt relative">
+<h3 class="text-[120px] font-display-lg text-outline leading-none absolute -top-8 -left-4 -z-10 select-none">LAYANAN</h3>
+<h3 class="font-display-lg text-display-lg text-primary leading-none uppercase">Layanan</h3>
+</div>
+<p class="text-secondary max-w-2xl mb-12">Rangkaian layanan yang saya bangun bukan sekadar konsep, tapi solusi yang bisa dipakai untuk kerja harian, komunikasi, dan otomasi yang lebih rapi.</p>
+<div class="grid md:grid-cols-5 gap-6">
+<!-- Card 1 -->
+<div class="bg-primary p-8 rounded-2xl flex flex-col gap-6 text-on-primary chunky-offset hover:-translate-y-2 transition-transform">
+<div class="w-16 h-16 bg-on-primary/10 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-[48px]">sync_alt</span>
+</div>
+<h4 class="font-display-lg text-headline-sm leading-tight">Automation Workflow (n8n)</h4>
+</div>
+<!-- Card 2 -->
+<div class="bg-primary p-8 rounded-2xl flex flex-col gap-6 text-on-primary chunky-offset hover:-translate-y-2 transition-transform md:mt-8">
+<div class="w-16 h-16 bg-on-primary/10 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-[48px]">smart_toy</span>
+</div>
+<h4 class="font-display-lg text-headline-sm leading-tight">AI Customer Service Bot</h4>
+</div>
+<!-- Card 3 -->
+<div class="bg-primary p-8 rounded-2xl flex flex-col gap-6 text-on-primary chunky-offset hover:-translate-y-2 transition-transform">
+<div class="w-16 h-16 bg-on-primary/10 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-[48px]">web</span>
+</div>
+<h4 class="font-display-lg text-headline-sm leading-tight">Website &amp; Landing Page</h4>
+</div>
+<!-- Card 4 -->
+<div class="bg-primary p-8 rounded-2xl flex flex-col gap-6 text-on-primary chunky-offset hover:-translate-y-2 transition-transform md:mt-8">
+<div class="w-16 h-16 bg-on-primary/10 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-[48px]">widgets</span>
+</div>
+<h4 class="font-display-lg text-headline-sm leading-tight">Aplikasi Custom</h4>
+</div>
+<!-- Card 5 -->
+<div class="bg-primary p-8 rounded-2xl flex flex-col gap-6 text-on-primary chunky-offset hover:-translate-y-2 transition-transform">
+<div class="w-16 h-16 bg-on-primary/10 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-[48px]">database</span>
+</div>
+<h4 class="font-display-lg text-headline-sm leading-tight">Web Scraping &amp; Data</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section class="py-section-gap relative bg-surface-container-low" id="portfolio">
+<div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-12 select-none z-0">
+<span class="text-[320px] font-display-lg text-outline leading-none opacity-40">03</span>
+</div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="flex items-center gap-4 mb-20">
+<h2 class="font-display-lg text-headline-md uppercase">PORTOFOLIO</h2>
+<div class="h-1 flex-grow bg-on-surface-variant/20"></div>
+<div class="font-label-caps text-label-caps text-primary bg-primary/10 px-4 py-2 rounded-full">KARYA TERPILIH</div>
+</div>
+<p class="text-secondary max-w-2xl mb-12">Ini beberapa project yang sudah jadi dan live. Saya susun supaya orang yang lihat langsung paham value, fungsi, dan arah kerjanya.</p>
+<div class="grid md:grid-cols-2 gap-8 items-stretch">
+<!-- Project 1 -->
+<div class="bg-white p-6 rounded-3xl border-4 border-on-surface shadow-xl group hover:scale-[1.01] card-float h-full flex flex-col min-h-[540px] md:-rotate-2">
+<div class="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-secondary-container">
+<img class="w-full h-full object-cover" data-alt="A futuristic dashboard UI showcasing real-time data flow and inventory management automation. The scene is rendered in a high-contrast black and white style with bold red neon highlights representing active data streams. A minimalist aesthetic dominates the layout, featuring crisp typography and industrial tech icons. The lighting is low-key, emphasizing the glow of the data visualizations." src="assets/project-absensi-pencatatan-barang.png"/>
+<div class="absolute top-4 left-4 flex gap-2 flex-wrap">
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-label-caps">LIVE PROJECT</span>
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-label-caps">N8N</span>
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-label-caps">GOOGLE SHEETS</span>
+</div>
+</div>
+<div class="flex flex-col gap-4 flex-1 justify-between">
+<div>
+<h4 class="font-display-lg text-headline-sm mb-2 uppercase">Sistem Absensi &amp; Catat Barang</h4>
+<p class="text-secondary text-sm">Automasi inventori harian yang bikin pencatatan lebih cepat, rapi, dan mudah dipantau.</p>
+</div>
+<div class="flex items-center justify-between gap-4 mt-auto">
+<a class="inline-flex items-center gap-2 text-primary font-label-caps text-sm hover:underline" href="https://bembenkporkliflampungcom.vercel.app/" target="_blank" rel="noopener noreferrer">
+Lihat Live
+<span class="material-symbols-outlined text-[18px]">north_east</span>
+</a>
+<a class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary shadow-lg" href="https://bembenkporkliflampungcom.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Buka live web Sistem Absensi &amp; Catat Barang">
+<span class="material-symbols-outlined">north_east</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="bg-white p-6 rounded-3xl border-4 border-on-surface shadow-xl group hover:scale-[1.01] card-float h-full flex flex-col min-h-[540px] md:translate-y-16 md:rotate-2">
+<div class="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-secondary-container">
+<img class="w-full h-full object-cover" data-alt="A concept visual of an AI Agent interacting within a mobile messaging interface. The design uses high-contrast monochrome photography of a modern smartphone held in hand, with glowing red digital conversational bubbles floating around the screen. The atmosphere is professional and technologically advanced, following a zine-inspired high-contrast aesthetic with sharp shadows." src="assets/project-cs-bot-reminder.png"/>
+<div class="absolute top-4 left-4 flex gap-2 flex-wrap">
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-label-caps">LIVE PROJECT</span>
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-label-caps">AI AGENT</span>
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-label-caps">OPENAI</span>
+</div>
+</div>
+<div class="flex flex-col gap-4 flex-1 justify-between">
+<div>
+<h4 class="font-display-lg text-headline-sm mb-2 uppercase">CS Bot + Smart Reminder</h4>
+<p class="text-secondary text-sm">Bot AI yang bantu respons lebih cepat, follow-up otomatis, dan jaga komunikasi tetap hidup.</p>
+</div>
+<div class="flex items-center justify-between gap-4 mt-auto">
+<a class="inline-flex items-center gap-2 text-primary font-label-caps text-sm hover:underline" href="https://makmur-florist.vercel.app/" target="_blank" rel="noopener noreferrer">
+Lihat Live
+<span class="material-symbols-outlined text-[18px]">north_east</span>
+</a>
+<a class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary shadow-lg" href="https://makmur-florist.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Buka live web CS Bot + Smart Reminder">
+<span class="material-symbols-outlined">north_east</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="bg-white p-6 rounded-3xl border-4 border-on-surface shadow-xl group hover:scale-[1.01] card-float h-full flex flex-col min-h-[540px] md:translate-y-0 md:-rotate-2">
+<div class="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-secondary-container">
+<img class="w-full h-full object-cover" data-alt="A visual representation of large-scale web scraping and data processing servers. The image is a striking high-contrast black and white photograph of an industrial server rack, illuminated by stark red LED indicator lights. The style is edgy and raw, reflecting a 'chine-poster' vibe. Geometric data patterns are overlaid on the image to suggest complex analysis and AI interpretation." src="assets/project-scraping-marketplace.png"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-label-caps">APIFY</span>
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-label-caps">MARKETPLACE</span>
+</div>
+</div>
+<div class="flex flex-col gap-4 flex-1 justify-between">
+<div>
+<h4 class="font-display-lg text-headline-sm mb-2 uppercase">Scraping Marketplace &amp; Analisa AI</h4>
+<p class="text-secondary text-sm">Riset kompetitor otomatis untuk ngambil insight pasar dengan alur yang jauh lebih efisien.</p>
+</div>
+<a class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary shadow-lg mt-auto" href="#">
+<span class="material-symbols-outlined">north_east</span>
+</a>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="bg-white p-6 rounded-3xl border-4 border-on-surface shadow-xl group hover:scale-[1.01] card-float h-full flex flex-col min-h-[540px] md:translate-y-20 md:rotate-2">
+<div class="relative h-[260px] md:h-[300px] rounded-2xl overflow-hidden mb-6 bg-secondary-container p-3">
+<video class="w-full h-full object-contain" autoplay loop muted playsinline poster="assets/project-absensi-pencatatan-barang.png">
+<source src="assets/video-aplikasi-pencatatan-tugas.mp4" type="video/mp4"/>
+</video>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary shadow-2xl animate-pulse">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-label-caps">WEB APP</span>
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-label-caps">UI/UX</span>
+</div>
+</div>
+<div class="flex flex-col gap-4 flex-1 justify-between">
+<div>
+<h4 class="font-display-lg text-headline-sm mb-2 uppercase">Aplikasi Pencatatan Tugas</h4>
+<p class="text-secondary text-sm">Task manager custom yang dibuat biar prioritas kerja lebih jelas dan alurnya tetap ringan.</p>
+</div>
+<a class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary shadow-lg mt-auto" href="#">
+<span class="material-symbols-outlined">north_east</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Landing Page Preview -->
+<section class="py-section-gap px-gutter relative overflow-hidden bg-surface-container-low" id="landing-pages">
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="flex items-center gap-4 mb-10">
+<h2 class="font-display-lg text-headline-md uppercase">LANDING PAGE</h2>
+<div class="h-1 flex-grow bg-on-surface-variant/20"></div>
+<div class="font-label-caps text-label-caps text-primary bg-primary/10 px-4 py-2 rounded-full">LIVE PREVIEW</div>
+</div>
+<p class="text-secondary max-w-2xl mb-12">Dua landing page ini saya tampilkan langsung di halaman porto supaya calon klien bisa lihat hasilnya tanpa pindah tab.</p>
+<div class="grid md:grid-cols-2 gap-10 items-start">
+<div class="bg-white rounded-[36px] border-4 border-on-surface overflow-hidden frame-shell card-float md:-rotate-2">
+<div class="px-5 py-4 border-b-2 border-on-surface/10 flex items-center justify-between gap-4">
+<div>
+<p class="font-label-caps text-primary">BEM BENK PORK LAMPUNG</p>
+<p class="text-secondary text-sm">Landing page live preview</p>
+</div>
+<a class="inline-flex items-center gap-2 text-primary font-label-caps text-sm hover:underline" href="https://bembenkporkliflampungcom.vercel.app/" target="_blank" rel="noopener noreferrer">
+Open Live
+<span class="material-symbols-outlined text-[18px]">north_east</span>
+</a>
+</div>
+<div class="h-[560px] md:h-[680px] bg-surface">
+<iframe class="w-full h-full border-0" loading="lazy" src="https://bembenkporkliflampungcom.vercel.app/" title="BEM Benk Pork Lampung landing page preview"></iframe>
+</div>
+</div>
+<div class="bg-white rounded-[36px] border-4 border-on-surface overflow-hidden frame-shell card-float md:translate-y-14 md:rotate-2">
+<div class="px-5 py-4 border-b-2 border-on-surface/10 flex items-center justify-between gap-4">
+<div>
+<p class="font-label-caps text-primary">MAKMUR FLORIST</p>
+<p class="text-secondary text-sm">Landing page live preview</p>
+</div>
+<a class="inline-flex items-center gap-2 text-primary font-label-caps text-sm hover:underline" href="https://makmur-florist.vercel.app/" target="_blank" rel="noopener noreferrer">
+Open Live
+<span class="material-symbols-outlined text-[18px]">north_east</span>
+</a>
+</div>
+<div class="h-[560px] md:h-[680px] bg-surface">
+<iframe class="w-full h-full border-0" loading="lazy" src="https://makmur-florist.vercel.app/" title="Makmur Florist landing page preview"></iframe>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-gap px-gutter relative overflow-hidden" id="contact">
+<div class="max-w-container-max mx-auto">
+<div class="bg-primary p-12 md:p-24 rounded-[48px] text-on-primary relative overflow-hidden chunky-offset zine-tilt">
+<!-- Background Pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="relative z-10 grid md:grid-cols-2 gap-12 items-start">
+<div>
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-md leading-none mb-8 uppercase">Let's Work<br/>Together!</h2>
+<p class="font-body-lg text-white/90 mb-12 max-w-md">Siap mengotomatisasi bisnis Anda? Mari diskusikan bagaimana 'karyawan digital' bisa membantu efisiensi operasional Anda.</p>
+<div class="flex flex-wrap gap-6">
+<a class="bg-on-surface text-surface px-8 py-4 rounded-full font-label-caps flex items-center gap-3 hover:scale-105 transition-transform shadow-xl" data-whatsapp-link href="#">
+<span class="material-symbols-outlined">chat</span>
+                                CHAT WHATSAPP
+                            </a>
+<a class="border-2 border-on-primary text-on-primary px-8 py-4 rounded-full font-label-caps hover:bg-on-primary hover:text-primary transition-all" data-email-link href="#">
+                                KIRIM EMAIL
+                            </a>
+</div>
+</div>
+<div class="bg-surface text-on-surface p-6 md:p-8 rounded-[32px] border-4 border-on-surface shadow-xl rotate-1">
+<form class="space-y-5" id="contact-form" novalidate="">
+<div>
+<label class="block font-label-caps text-primary mb-2" for="nama">Nama</label>
+<input class="w-full rounded-xl border-2 border-on-surface bg-white px-4 py-3 text-on-surface placeholder:text-secondary focus:outline-none focus:ring-0 focus:border-primary" id="nama" name="nama" placeholder="Nama kamu" type="text"/>
+<p class="mt-2 text-sm text-error min-h-[1.25rem]" data-error-for="nama"></p>
+</div>
+<div>
+<label class="block font-label-caps text-primary mb-2" for="kontak">Kontak (Email/WhatsApp)</label>
+<input class="w-full rounded-xl border-2 border-on-surface bg-white px-4 py-3 text-on-surface placeholder:text-secondary focus:outline-none focus:ring-0 focus:border-primary" id="kontak" name="kontak" placeholder="Email atau nomor WhatsApp" type="text"/>
+<p class="mt-2 text-sm text-error min-h-[1.25rem]" data-error-for="kontak"></p>
+</div>
+<div>
+<label class="block font-label-caps text-primary mb-2" for="layanan">Layanan yang diminati</label>
+<select class="w-full rounded-xl border-2 border-on-surface bg-white px-4 py-3 text-on-surface focus:outline-none focus:ring-0 focus:border-primary" id="layanan" name="layanan">
+<option value="">Pilih layanan</option>
+<option value="Automation">Automation</option>
+<option value="CS Bot">CS Bot</option>
+<option value="Website">Website</option>
+<option value="Landing Page">Landing Page</option>
+<option value="Aplikasi">Aplikasi</option>
+<option value="Scraping">Scraping</option>
+</select>
+<p class="mt-2 text-sm text-error min-h-[1.25rem]" data-error-for="layanan"></p>
+</div>
+<div>
+<label class="block font-label-caps text-primary mb-2" for="pesan">Pesan</label>
+<textarea class="w-full min-h-[140px] rounded-xl border-2 border-on-surface bg-white px-4 py-3 text-on-surface placeholder:text-secondary focus:outline-none focus:ring-0 focus:border-primary" id="pesan" name="pesan" placeholder="Ceritakan kebutuhan Anda"></textarea>
+<p class="mt-2 text-sm text-error min-h-[1.25rem]" data-error-for="pesan"></p>
+</div>
+<div class="flex flex-col gap-3">
+<button class="bg-primary text-on-primary px-6 py-4 rounded-full font-label-caps hover:scale-[1.01] transition-transform shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100" disabled="" type="submit">
+KIRIM VIA WHATSAPP
+</button>
+<p class="text-sm text-primary font-label-caps hidden" id="contact-success-note">Membuka WhatsApp...</p>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface py-16 md:py-20 px-gutter border-t-2 border-secondary overflow-hidden">
+<div class="max-w-4xl mx-auto flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-12">
+<div class="space-y-4 max-w-sm">
+<a class="flex items-center gap-3 uppercase shrink-0" href="#hero" aria-label="Farrel home">
+<img alt="Farrel logo" class="w-8 h-8 md:w-9 md:h-9 rounded-xl shadow-sm ring-2 ring-primary/10" src="image.png"/>
+<div class="brand-wordmark text-on-surface dark:text-inverse-on-surface">
+                    FARREL
+                </div>
+</a>
+<p class="font-label-caps text-secondary leading-relaxed">Membangun masa depan melalui automasi cerdas &amp; efisien.</p>
+</div>
+<div class="max-w-sm">
+<h5 class="font-label-caps text-primary mb-4">CONTACT</h5>
+<ul class="space-y-2">
+<li><a class="text-secondary hover:text-primary transition-colors font-body-md inline-flex items-center gap-2" data-footer-email-link href="#"><span class="material-symbols-outlined text-[18px]">mail</span><span>farelananda1710@gmail.com</span></a></li>
+<li><a class="text-secondary hover:text-primary transition-colors font-body-md inline-flex items-center gap-2" data-footer-whatsapp-link href="#"><span class="material-symbols-outlined text-[18px]">chat</span><span>082111581752</span></a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-4xl mx-auto mt-10 pt-5 border-t border-on-surface/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
+<p class="font-body-md text-secondary">FARREL © 2026 AI &amp; AUTOMATION ENGINEER</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-secondary opacity-50">smart_toy</span>
+<span class="material-symbols-outlined text-secondary opacity-50">mail</span>
+<span class="material-symbols-outlined text-secondary opacity-50">chat</span>
+</div>
+</div>
+</footer>
+<script>
+        // Edit these values if your contact details change.
+        const WHATSAPP_NUMBER = '6282111581752';
+        const EMAIL_ADDRESS = 'farelananda1710@gmail.com';
+        const DIRECT_WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Halo Farrel, saya mau konsultasi automation')}`;
+        const EMAIL_URL = `mailto:${EMAIL_ADDRESS}`;
+
+        // Smooth scroll for in-page anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') {
+                    return;
+                }
+                const target = document.querySelector(targetId);
+                if (!target) {
+                    return;
+                }
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const navLinks = document.querySelectorAll('[data-nav-link]');
+        const navTargets = ['hero', 'about', 'services', 'portfolio', 'landing-pages', 'contact'];
+
+        function setActiveNav(targetId) {
+            navLinks.forEach(link => {
+                const isActive = link.getAttribute('href') === `#${targetId}`;
+                link.classList.toggle('active', isActive);
+            });
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const targetId = link.getAttribute('href').slice(1);
+                setActiveNav(targetId);
+            });
+        });
+
+        function updateActiveNavFromScroll() {
+            const siteNav = document.querySelector('.site-nav');
+            const navHeight = siteNav ? siteNav.offsetHeight : 0;
+            const probeY = navHeight + 28;
+            let activeId = 'hero';
+            let smallestDistance = Number.POSITIVE_INFINITY;
+
+            navTargets.forEach(id => {
+                const section = document.getElementById(id);
+                if (!section) {
+                    return;
+                }
+
+                const rect = section.getBoundingClientRect();
+                const isInBand = rect.top <= probeY && rect.bottom >= probeY;
+
+                if (isInBand) {
+                    activeId = id;
+                    smallestDistance = 0;
+                    return;
+                }
+
+                const distance = Math.abs(rect.top - probeY);
+                if (rect.top <= probeY + 120 && distance < smallestDistance) {
+                    smallestDistance = distance;
+                    activeId = id;
+                }
+            });
+
+            setActiveNav(activeId);
+        }
+
+        window.addEventListener('scroll', () => {
+            window.requestAnimationFrame(updateActiveNavFromScroll);
+        }, { passive: true });
+
+        window.addEventListener('resize', () => {
+            window.requestAnimationFrame(updateActiveNavFromScroll);
+        });
+
+        updateActiveNavFromScroll();
+
+        const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+        const mobileNavMenu = document.getElementById('mobile-nav-menu');
+        const mobileNavIcon = document.getElementById('mobile-nav-icon');
+
+        function setMobileNavOpen(isOpen) {
+            if (!mobileNavToggle || !mobileNavMenu || !mobileNavIcon) {
+                return;
+            }
+            mobileNavMenu.classList.toggle('hidden', !isOpen);
+            mobileNavToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            mobileNavIcon.textContent = isOpen ? 'close' : 'menu';
+        }
+
+        if (mobileNavToggle && mobileNavMenu) {
+            mobileNavToggle.addEventListener('click', () => {
+                const isOpen = mobileNavMenu.classList.contains('hidden');
+                setMobileNavOpen(isOpen);
+            });
+
+            mobileNavMenu.querySelectorAll('[data-nav-link]').forEach(link => {
+                link.addEventListener('click', () => setMobileNavOpen(false));
+            });
+        }
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                setMobileNavOpen(false);
+            }
+        });
+
+        const whatsappLinks = document.querySelectorAll('[data-whatsapp-link]');
+        const emailLinks = document.querySelectorAll('[data-email-link]');
+        const footerEmailLinks = document.querySelectorAll('[data-footer-email-link]');
+        const footerWhatsappLinks = document.querySelectorAll('[data-footer-whatsapp-link]');
+        whatsappLinks.forEach(link => {
+            link.href = DIRECT_WHATSAPP_URL;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+        });
+        emailLinks.forEach(link => {
+            link.href = EMAIL_URL;
+        });
+        footerEmailLinks.forEach(link => {
+            link.href = EMAIL_URL;
+        });
+        footerWhatsappLinks.forEach(link => {
+            link.href = DIRECT_WHATSAPP_URL;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+        });
+
+        const contactForm = document.getElementById('contact-form');
+        const contactSuccessNote = document.getElementById('contact-success-note');
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const formFields = ['nama', 'kontak', 'layanan', 'pesan'].map(id => contactForm.elements[id]);
+        const touchedFields = new Set();
+        let submittedOnce = false;
+
+        function getFieldErrorElement(fieldName) {
+            return contactForm.querySelector(`[data-error-for="${fieldName}"]`);
+        }
+
+        function setFieldError(fieldName, message) {
+            const errorElement = getFieldErrorElement(fieldName);
+            const field = contactForm.elements[fieldName];
+            if (errorElement) {
+                errorElement.textContent = message;
+            }
+            if (field) {
+                field.setAttribute('aria-invalid', message ? 'true' : 'false');
+            }
+        }
+
+        function validateField(fieldName) {
+            const field = contactForm.elements[fieldName];
+            const value = field.value.trim();
+            const shouldShowError = touchedFields.has(fieldName) || submittedOnce;
+            if (!value) {
+                if (shouldShowError) {
+                    setFieldError(fieldName, 'Wajib diisi.');
+                }
+                return false;
+            }
+            setFieldError(fieldName, '');
+            return true;
+        }
+
+        function isFormValid() {
+            return formFields.every(field => field.value.trim());
+        }
+
+        function syncSubmitState() {
+            submitButton.disabled = !isFormValid();
+        }
+
+        formFields.forEach(field => {
+            field.addEventListener('blur', () => {
+                touchedFields.add(field.name);
+                validateField(field.name);
+                syncSubmitState();
+            });
+
+            field.addEventListener('input', () => {
+                if (touchedFields.has(field.name) || submittedOnce) {
+                    validateField(field.name);
+                } else {
+                    setFieldError(field.name, '');
+                }
+                syncSubmitState();
+            });
+
+            field.addEventListener('change', () => {
+                touchedFields.add(field.name);
+                validateField(field.name);
+                syncSubmitState();
+            });
+        });
+
+        syncSubmitState();
+
+        contactForm.addEventListener('submit', event => {
+            event.preventDefault();
+            submittedOnce = true;
+
+            const valid = formFields.every(field => {
+                touchedFields.add(field.name);
+                return validateField(field.name);
+            });
+
+            syncSubmitState();
+
+            if (!valid) {
+                return;
+            }
+
+            const nama = contactForm.elements.nama.value.trim();
+            const kontak = contactForm.elements.kontak.value.trim();
+            const layanan = contactForm.elements.layanan.value.trim();
+            const pesan = contactForm.elements.pesan.value.trim();
+            const message = `Halo Farrel! \u{1F44B}\nNama: ${nama}\nKontak: ${kontak}\nLayanan yang diminati: ${layanan}\nPesan: ${pesan}`;
+            const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+            window.open(waUrl, '_blank', 'noopener,noreferrer');
+            contactSuccessNote.classList.remove('hidden');
+            contactForm.reset();
+            touchedFields.clear();
+            formFields.forEach(field => setFieldError(field.name, ''));
+            submittedOnce = false;
+            syncSubmitState();
+            window.setTimeout(() => {
+                contactSuccessNote.classList.add('hidden');
+            }, 2500);
+        });
+
+        // Parallax-lite effect for background numerals
+        window.addEventListener('scroll', () => {
+            const scrolls = document.querySelectorAll('.text-outline');
+            scrolls.forEach(el => {
+                const speed = 0.05;
+                const rect = el.getBoundingClientRect();
+                const visible = rect.top < window.innerHeight && rect.bottom > 0;
+                if (visible) {
+                    const yPos = (window.scrollY * speed);
+                    el.style.transform = `translateY(${yPos}px)`;
+                }
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,7 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Farrel logo</title>
+  <desc id="desc">Red circular monogram logo with stylized F mark and dot.</desc>
+  <circle cx="128" cy="128" r="106" stroke="#E33226" stroke-width="30"/>
+  <path d="M94 186V90H152C170 90 182 100 182 116C182 130 173 140 159 143V144C174 147 184 157 184 173C184 192 170 204 149 204H116" stroke="#E33226" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="184" cy="150" r="18" fill="#E33226"/>
+</svg>
